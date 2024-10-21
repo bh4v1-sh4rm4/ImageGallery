@@ -187,8 +187,10 @@
             <size key="customSize" width="363" height="368"/>
             <connections>
                 <outlet property="cellimage" destination="CgH-yZ-8IE" id="ARY-RE-SNd"/>
+                <outlet property="commentsCount" destination="MY2-a5-86M" id="C0e-Bf-ZEo"/>
                 <outlet property="lblName" destination="lp7-yn-aFd" id="uK2-82-JkQ"/>
                 <outlet property="lblUsername" destination="RhL-gV-HSB" id="kTw-JC-gUd"/>
+                <outlet property="likesCount" destination="9jK-rl-adg" id="919-eN-dxC"/>
                 <outlet property="profileImg" destination="ZT1-P9-9Wr" id="daf-IF-w1N"/>
             </connections>
             <point key="canvasLocation" x="200.76335877862596" y="131.69014084507043"/>
