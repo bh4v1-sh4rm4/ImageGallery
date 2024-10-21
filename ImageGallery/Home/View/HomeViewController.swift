@@ -183,12 +183,16 @@ struct Social: Decodable {
 class HomeViewController : UIViewController {
     @IBOutlet var circularLoader: UIActivityIndicatorView!
     @IBOutlet var cvImage: UICollectionView!
+    @IBOutlet var searchBar: UISearchBar!
     var photos : [Photo] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupCV()
         fetchPhotos()
+        self.navigationController?.isNavigationBarHidden = true
+        self.searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
     }
     
     func setupCV() {
@@ -258,12 +262,23 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell else {return ImageCollectionViewCell()}
+        var photoData = photos[indexPath.item]
+        collectionCell.configure(imageURL: photoData.urls.regular, profileURL: photoData.user.profileImage.large, name: photoData.user.name, username: photoData.user.username)
+                
         return collectionCell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            let width = (collectionView.frame.width - 30) / 2
-            let height = 2 * collectionView.frame.height / 5
+            let width = (collectionView.frame.width - 10)
+        let height =  (collectionView.frame.width - 10 )
             return CGSize(width: width, height: height)
     }
     
 }
+
+extension HomeViewController : UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        true
+    }
+}
+

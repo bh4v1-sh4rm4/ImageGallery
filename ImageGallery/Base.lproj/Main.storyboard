@@ -86,8 +86,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PMB-QF-1Yl">
-                                <rect key="frame" x="10" y="69" width="373" height="739"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="119" width="393" height="699"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="5" id="e3q-6c-Dlj">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -95,8 +95,9 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="Zvu-46-mHR">
-                                    <rect key="frame" x="0.0" y="0.0" width="373" height="739"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="699"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="K3m-Zj-0mE">
@@ -109,29 +110,75 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xc4-iu-Vm8">
+                                <rect key="frame" x="0.0" y="59" width="393" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZU-Cj-j3r">
+                                        <rect key="frame" x="353" y="15" width="30" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="aKi-ve-zLU"/>
+                                            <constraint firstAttribute="width" constant="30" id="tjE-f7-dd6"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="power" catalog="system"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <searchBar contentMode="redraw" barStyle="black" placeholder="Search Image Title" translatesAutoresizingMaskIntoConstraints="NO" id="OLz-vn-qB1">
+                                        <rect key="frame" x="10" y="5" width="333" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="fcN-Jv-dn7" id="k8h-ta-asO"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="OLz-vn-qB1" secondAttribute="bottom" constant="5" id="7Bh-H9-F1S"/>
+                                    <constraint firstItem="RZU-Cj-j3r" firstAttribute="leading" secondItem="OLz-vn-qB1" secondAttribute="trailing" constant="10" id="ABC-Yn-bY7"/>
+                                    <constraint firstAttribute="trailing" secondItem="RZU-Cj-j3r" secondAttribute="trailing" constant="10" id="HbQ-7e-Omg"/>
+                                    <constraint firstAttribute="height" constant="60" id="bRc-YB-FAT"/>
+                                    <constraint firstItem="RZU-Cj-j3r" firstAttribute="centerY" secondItem="xc4-iu-Vm8" secondAttribute="centerY" id="eEz-XX-AfQ"/>
+                                    <constraint firstItem="OLz-vn-qB1" firstAttribute="top" secondItem="xc4-iu-Vm8" secondAttribute="top" constant="5" id="tI1-g1-ple"/>
+                                    <constraint firstItem="OLz-vn-qB1" firstAttribute="leading" secondItem="xc4-iu-Vm8" secondAttribute="leading" constant="10" id="yrP-rA-5q5"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bJz-Qb-aFc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="bJz-Qb-aFc" firstAttribute="bottom" secondItem="PMB-QF-1Yl" secondAttribute="bottom" constant="10" id="1Af-Ft-WXP"/>
-                            <constraint firstItem="PMB-QF-1Yl" firstAttribute="top" secondItem="bJz-Qb-aFc" secondAttribute="top" constant="10" id="370-Kn-s0m"/>
-                            <constraint firstItem="bJz-Qb-aFc" firstAttribute="trailing" secondItem="PMB-QF-1Yl" secondAttribute="trailing" constant="10" id="8vR-53-sOG"/>
-                            <constraint firstItem="PMB-QF-1Yl" firstAttribute="leading" secondItem="bJz-Qb-aFc" secondAttribute="leading" constant="10" id="OEW-Tv-Ym4"/>
+                            <constraint firstItem="bJz-Qb-aFc" firstAttribute="bottom" secondItem="PMB-QF-1Yl" secondAttribute="bottom" id="1Af-Ft-WXP"/>
+                            <constraint firstItem="PMB-QF-1Yl" firstAttribute="top" secondItem="xc4-iu-Vm8" secondAttribute="bottom" id="8pt-AG-kSV"/>
+                            <constraint firstItem="bJz-Qb-aFc" firstAttribute="trailing" secondItem="PMB-QF-1Yl" secondAttribute="trailing" id="8vR-53-sOG"/>
+                            <constraint firstItem="xc4-iu-Vm8" firstAttribute="top" secondItem="bJz-Qb-aFc" secondAttribute="top" id="BXz-oW-Yjj"/>
+                            <constraint firstItem="PMB-QF-1Yl" firstAttribute="leading" secondItem="bJz-Qb-aFc" secondAttribute="leading" id="OEW-Tv-Ym4"/>
+                            <constraint firstItem="xc4-iu-Vm8" firstAttribute="leading" secondItem="bJz-Qb-aFc" secondAttribute="leading" id="g1Q-0U-D2W"/>
+                            <constraint firstItem="bJz-Qb-aFc" firstAttribute="trailing" secondItem="xc4-iu-Vm8" secondAttribute="trailing" id="ztz-SA-Dg9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="circularLoader" destination="Zvu-46-mHR" id="8sg-CM-cnQ"/>
                         <outlet property="cvImage" destination="PMB-QF-1Yl" id="lCV-Tz-mEl"/>
+                        <outlet property="searchBar" destination="OLz-vn-qB1" id="Wfo-rT-POz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cac-cd-BkW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821" y="-2"/>
+            <point key="canvasLocation" x="820.61068702290072" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="power" catalog="system" width="127" height="128"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
