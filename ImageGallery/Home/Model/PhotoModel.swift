@@ -7,7 +7,7 @@
 
 import Foundation
 
-// Base model for User
+
 struct User: Codable {
     let id: String?
     let username: String?
@@ -48,14 +48,12 @@ struct SocialPlatforms : Codable {
     let paypal_email: String?
 }
 
-// Profile Image for User
 struct ProfileImage: Codable {
     let small: String?
     let medium: String?
     let large: String?
 }
 
-// User Links
 struct UserLinks: Codable {
     let selfLink: String?
     let html: String?
@@ -73,7 +71,6 @@ struct UserLinks: Codable {
     }
 }
 
-// Photo or Search Result Model
 struct Photo: Codable {
     let id: String?
     let slug: String?
@@ -103,7 +100,6 @@ struct Photo: Codable {
     }
 }
 
-// Photo URLs
 struct PhotoURLs: Codable {
     let raw: String?
     let full: String?
@@ -113,7 +109,6 @@ struct PhotoURLs: Codable {
     let small_s3: String?
 }
 
-// Response for Search Photos
 struct SearchPhotosResponse: Codable {
     let total: Int?
     let totalPages: Int?
@@ -126,7 +121,6 @@ struct SearchPhotosResponse: Codable {
     }
 }
 
-// Response for Single Photo
 struct PhotoResponse: Codable {
     let results: [Photo]?
 }

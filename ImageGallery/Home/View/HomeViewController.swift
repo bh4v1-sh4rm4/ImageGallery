@@ -17,11 +17,19 @@ class HomeViewController : UIViewController {
     var viewModel = HomeViewModel()
     var isSearched : Bool = false
     var refreshControl = UIRefreshControl()
+    
+    //MARK: - UI Lifecycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupCV()
         fetchPhotos()
+        setupUI()
+    }
+    
+    // MARK: - UI Setup Methods
+    
+    private func setupUI() {
         self.navigationController?.isNavigationBarHidden = true
         self.searchBar.backgroundImage = UIImage()
         searchBar.delegate = self
@@ -34,25 +42,22 @@ class HomeViewController : UIViewController {
         cvImage.delegate = self
         cvImage.dataSource = self
         cvImage.register(UINib(nibName: "ImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageCollectionViewCell")
-        //        let layout = UICollectionViewFlowLayout()
     }
     private func setupRefreshControl() {
-        // Add the refresh control to the collection view
         if #available(iOS 10.0, *) {
             cvImage.refreshControl = refreshControl
         } else {
             cvImage.addSubview(refreshControl)
         }
-        
-        // Configure the refresh control
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-        refreshControl.tintColor = .gray // Customize the color if needed
     }
+    
+    // MARK: - OBJC Function for UI Handeling
+    
     @objc private func refreshData() {
         fetchPhotos()
-        // Call your refresh function or reload data
-        // Simulate network request or data fetching
         circularLoader.startAnimating()
+        circularLoader.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             // Stop the refresh control
             self.refreshControl.endRefreshing()
@@ -65,9 +70,14 @@ class HomeViewController : UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    // MARK: - IBAction Methods
+    
     @IBAction func btnActionLogout(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    // MARK: - User Defined Methods
     
     private func showErrorDialog(error: String) {
         DispatchQueue.main.async{
@@ -107,6 +117,9 @@ class HomeViewController : UIViewController {
         }
     }
 }
+
+// MARK: - Extension: UI TableView Delegate Methods
+
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
@@ -127,8 +140,7 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
         } else {
             photoData = photos[indexPath.item]
         }
-        collectionCell.configure(imageURL: (photoData!.urls?.regular!)!, profileURL: photoData!.user.profileImage.large!, name: photoData!.user.name, username: photoData!.user.username!, likesCount: String(photoData!.likes!), commentsCount: String(photoData!.likes!))
-//        self.cvImage.reloadData()
+        collectionCell.configure(imageURL: photoData!.urls?.regular, profileURL: photoData?.user.profileImage.large, name: photoData?.user.name, username: photoData?.user.username, likesCount: String(photoData?.likes ?? 0), commentsCount: String(photoData?.likes ?? 0))
         return collectionCell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -138,6 +150,8 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     }
     
 }
+
+// MARK: - Extension : UI SearchBar Delegate
 
 extension HomeViewController : UISearchBarDelegate {
     internal func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

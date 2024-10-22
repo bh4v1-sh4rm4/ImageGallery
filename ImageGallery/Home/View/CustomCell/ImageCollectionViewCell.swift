@@ -20,12 +20,12 @@ class ImageCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    func configure (imageURL: String, profileURL: String, name: String, username: String, likesCount: String, commentsCount: String) {
-        cellimage.sd_setImage(with: URL(string: imageURL))
-        profileImg.sd_setImage(with: URL(string: profileURL))
+    func configure (imageURL: String?, profileURL: String?, name: String?, username: String?, likesCount: String?, commentsCount: String?) {
+        cellimage.sd_setImage(with: URL(string: imageURL!))
+        profileImg.sd_setImage(with: URL(string: profileURL!))
         lblName.text = name
-        lblUsername.text = "@\(username)"
-        self.likesCount.text = "\(likesCount)K"
-        self.commentsCount.text = commentsCount
+        lblUsername.text = "@\(username!)"
+        self.likesCount.text = "\(likesCount!)K"
+        self.commentsCount.text = commentsCount!
     }
 }
