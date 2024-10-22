@@ -12,7 +12,31 @@ ImageGallery is an iOS application that uses the Unsplash API to fetch and displ
 - **MVVM Architecture**: Implements the MVVM design pattern for better code separation and testability.
 
 ## Screenshots
-_(Include some screenshots of your app here)_
+<h3> Home </h3>
+<p align="center">
+<img src= "https://github.com/user-attachments/assets/b10747b8-fc16-4bb1-9704-b035d47c5d9c" width="200" height="400" align="center"/>
+   &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp;
+   <img src= "https://github.com/user-attachments/assets/87c2dc38-304f-48f9-b71c-4cd66b24fa04" width="200" height="400" align="center"/>
+</p>
+
+<h3> Searching </h3>
+<p align="center">
+<img src= "https://github.com/user-attachments/assets/b8d496b5-05a5-442b-8082-c285a4bf7ada" width="200" height="400" align="center"/>
+   &nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp;
+   <img src= "https://github.com/user-attachments/assets/53f31772-aec4-4d23-86a2-31675f6b6d19" width="200" height="400" align="center"/>
+</p>
+
+<h3> Loading Indicator </h3>
+<p align="center">
+<img src= "https://github.com/user-attachments/assets/142659c1-0f72-4913-beb1-af47b1e94c7d" width="200" height="400" align="center"/>
+</p>
+
+<h3> Network Error Handeling </h3>
+<p align="center">
+<img src= "https://github.com/user-attachments/assets/c4e5b1f8-d0e1-47fd-9168-7abd705cf34e" width="200" height="400" align="center"/>
+</p>
 
 ## Requirements
 - iOS 13.0+
