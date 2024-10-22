@@ -11,7 +11,7 @@ class HomeViewModel {
     private let clientID = "naFg1XfPR1-Pn2ru7JBVg2d5pjanCpI58rdSrGfMdnE"
     
     func fetchPhotos(completion: @escaping (Result<[Photo], Error>) -> Void) {
-        let urlString = "https://api.unsplash.com/photos/?client_id=\(clientID)&per_page=10"
+        let urlString = "https://api.unsplash.com/photos/random?client_id=\(clientID)&count=30"
         
         guard let url = URL(string: urlString) else {
             let urlError = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
@@ -52,7 +52,7 @@ class HomeViewModel {
         }.resume()
     }
     
-    func searchPhotos(query: String, completion: @escaping (Result<[Photo], Error>) -> Void) {
+    func searchPhotos(query: String, completion: @escaping (Result<PhotoResponse, Error>) -> Void) {
             let urlString = "https://api.unsplash.com/search/photos/?client_id=\(clientID)&per_page=30&query=\(query)"
         print(urlString)
             guard let url = URL(string: urlString) else {
@@ -77,7 +77,7 @@ class HomeViewModel {
                     return
                 }
                 do {
-                    let decodedPhotos = try JSONDecoder().decode([Photo].self, from: data)
+                    let decodedPhotos = try JSONDecoder().decode(PhotoResponse.self, from: data)
                     completion(.success(decodedPhotos))
                 } catch {
                     completion(.failure(error))

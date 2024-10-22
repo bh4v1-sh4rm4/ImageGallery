@@ -18,53 +18,69 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaC-Gr-sDb">
-                                <rect key="frame" x="144.33333333333334" y="290.66666666666669" width="104.33333333333334" height="20.333333333333314"/>
+                                <rect key="frame" x="144.33333333333334" y="487.66666666666669" width="104.33333333333334" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" systemColor="systemGray6Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="jb1-c5-dVE">
-                                <rect key="frame" x="45" y="371" width="303" height="110"/>
+                                <rect key="frame" x="30" y="568" width="333" height="130"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="44z-GL-IKR">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="vMZ-rl-7an"/>
+                                            <constraint firstAttribute="height" constant="50" id="vMZ-rl-7an"/>
                                         </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vps-yF-Ln0">
-                                        <rect key="frame" x="0.0" y="70" width="303" height="40"/>
+                                        <rect key="frame" x="0.0" y="80" width="333" height="50"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Tgj-sx-BTK"/>
+                                            <constraint firstAttribute="height" constant="50" id="Tgj-sx-BTK"/>
                                         </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QfJ-rM-gfd">
-                                <rect key="frame" x="163.66666666666666" y="531" width="65.666666666666657" height="34.333333333333371"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                <rect key="frame" x="30" y="738" width="333" height="50"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8BL-hw-8F9"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Login"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="btnActionLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pmd-2E-gve"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="jb1-c5-dVE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8I7-dd-Qw8"/>
+                            <constraint firstItem="QfJ-rM-gfd" firstAttribute="top" secondItem="jb1-c5-dVE" secondAttribute="bottom" constant="40" id="0Tn-tV-GOQ"/>
                             <constraint firstItem="jb1-c5-dVE" firstAttribute="top" secondItem="TaC-Gr-sDb" secondAttribute="bottom" constant="60" id="C7j-HL-FCt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QfJ-rM-gfd" secondAttribute="bottom" constant="30" id="Maa-h3-CHo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QfJ-rM-gfd" secondAttribute="trailing" constant="30" id="N9x-io-6lj"/>
                             <constraint firstItem="QfJ-rM-gfd" firstAttribute="centerX" secondItem="jb1-c5-dVE" secondAttribute="centerX" id="aub-Kg-HEc"/>
-                            <constraint firstItem="jb1-c5-dVE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="haJ-iV-LSb"/>
-                            <constraint firstItem="QfJ-rM-gfd" firstAttribute="top" secondItem="jb1-c5-dVE" secondAttribute="bottom" constant="50" id="rcL-ZS-5ii"/>
+                            <constraint firstItem="jb1-c5-dVE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="haJ-iV-LSb"/>
+                            <constraint firstItem="QfJ-rM-gfd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="idC-F6-vxZ"/>
                             <constraint firstItem="jb1-c5-dVE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sRW-LH-Sh2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jb1-c5-dVE" secondAttribute="trailing" constant="45" id="wI5-1F-34L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jb1-c5-dVE" secondAttribute="trailing" constant="30" id="wI5-1F-34L"/>
                             <constraint firstItem="TaC-Gr-sDb" firstAttribute="centerX" secondItem="jb1-c5-dVE" secondAttribute="centerX" id="wNV-7R-8xA"/>
                         </constraints>
                     </view>
@@ -128,6 +144,9 @@
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="btnActionLogout:" destination="fcN-Jv-dn7" eventType="touchUpInside" id="gse-rY-zPJ"/>
+                                        </connections>
                                     </button>
                                     <searchBar contentMode="redraw" barStyle="black" placeholder="Search Image Title" translatesAutoresizingMaskIntoConstraints="NO" id="OLz-vn-qB1">
                                         <rect key="frame" x="10" y="5" width="333" height="50"/>
@@ -177,8 +196,11 @@
     </scenes>
     <resources>
         <image name="power" catalog="system" width="127" height="128"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
